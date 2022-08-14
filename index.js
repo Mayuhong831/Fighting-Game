@@ -45,7 +45,7 @@ class Sprite{
     }
     update(){
         this.draw()
-        this.attackBox.position.x = this.position.x - this.attackBox.offset.x
+        this.attackBox.position.x = this.position.x + this.attackBox.offset.x
         this.attackBox.position.y = this.position.y
         
         this.position.x += this.velocity.x
@@ -236,7 +236,7 @@ window.addEventListener('keydown', (event) => {
             enemy.velocity.y = -20
             break
         case 'ArrowDown':
-            enemy.isAttacking = true
+            enemy.attack()
             break
     }
     console.log(event.key)
